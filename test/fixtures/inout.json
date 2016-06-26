@@ -1,0 +1,66 @@
+{
+  "options": {
+    "directed": true,
+    "multigraph": true,
+    "compound": true
+  },
+  "nodes": [
+    {
+      "v": "stdout_0",
+      "value": {
+        "id": "io/stdout",
+        "version": "0.3.0",
+        "inputPorts": {
+          "input": "string"
+        },
+        "outputPorts": {},
+        "settings": {
+          "sideEffects": true,
+          "argumentOrdering": [
+            "input"
+          ]
+        },
+        "atomic": true,
+        "isSink": true,
+        "path": [],
+        "branchPath": "stdout_0",
+        "branch": "stdout_0",
+        "name": "stdout_0",
+        "recursive": false
+      }
+    },
+    {
+      "v": "stdin_1",
+      "value": {
+        "id": "io/stdin",
+        "version": "0.3.0",
+        "inputPorts": {},
+        "outputPorts": {
+          "output": "string"
+        },
+        "settings": {
+          "sideEffects": true,
+          "argumentOrdering": [
+            "output"
+          ]
+        },
+        "atomic": true,
+        "path": [],
+        "branchPath": "stdin_1",
+        "branch": "stdin_1",
+        "name": "stdin_1",
+        "recursive": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "v": "stdin_1",
+      "w": "stdout_0",
+      "value": {
+        "outPort": "output",
+        "inPort": "input"
+      }
+    }
+  ]
+}

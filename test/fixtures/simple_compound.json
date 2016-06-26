@@ -1,0 +1,237 @@
+{
+  "options": {
+    "directed": true,
+    "multigraph": true,
+    "compound": true
+  },
+  "nodes": [
+    {
+      "v": "a_2",
+      "value": {
+        "id": "a",
+        "inputPorts": {
+          "b": "generic"
+        },
+        "outputPorts": {
+          "value": "generic"
+        },
+        "settings": {
+          "argumentOrdering": [
+            "b",
+            "value"
+          ]
+        },
+        "implementation": {
+          "nodes": [
+            {
+              "id": "math/add",
+              "version": "0.3.0",
+              "inputPorts": {
+                "s1": "number",
+                "s2": "number"
+              },
+              "outputPorts": {
+                "sum": "number"
+              },
+              "atomic": true,
+              "settings": {
+                "argumentOrdering": [
+                  "s1",
+                  "s2",
+                  "sum"
+                ]
+              },
+              "path": [
+                {
+                  "meta": "a",
+                  "branch": "a_2",
+                  "branchPath": "a_2"
+                }
+              ],
+              "parent": "a_2",
+              "branchPath": "a_2:add_0",
+              "branch": "add_0",
+              "recursive": false
+            },
+            {
+              "id": "math/const",
+              "version": "0.3.0",
+              "inputPorts": {},
+              "outputPorts": {
+                "output": "number"
+              },
+              "atomic": true,
+              "settings": {
+                "argumentOrdering": [
+                  "output"
+                ]
+              },
+              "path": [
+                {
+                  "meta": "a",
+                  "branch": "a_2",
+                  "branchPath": "a_2"
+                }
+              ],
+              "params": {
+                "value": 1
+              },
+              "parent": "a_2",
+              "branchPath": "a_2:const(1)_1",
+              "branch": "const(1)_1",
+              "recursive": false
+            }
+          ],
+          "edges": [
+            {
+              "from": "const(1)_1:output",
+              "to": "add_0:s1"
+            },
+            {
+              "from": "b",
+              "to": "add_0:s2"
+            },
+            {
+              "from": "add_0:sum",
+              "to": "value"
+            }
+          ]
+        },
+        "name": "a_2",
+        "externalComponent": true,
+        "path": [],
+        "branchPath": "a_2",
+        "branch": "a_2",
+        "recursive": false
+      }
+    },
+    {
+      "v": "a_2:add_0",
+      "value": {
+        "id": "math/add",
+        "version": "0.3.0",
+        "inputPorts": {
+          "s1": "number",
+          "s2": "number"
+        },
+        "outputPorts": {
+          "sum": "number"
+        },
+        "atomic": true,
+        "settings": {
+          "argumentOrdering": [
+            "s1",
+            "s2",
+            "sum"
+          ]
+        },
+        "path": [
+          {
+            "meta": "a",
+            "branch": "a_2",
+            "branchPath": "a_2"
+          }
+        ],
+        "parent": "a_2",
+        "branchPath": "a_2:add_0",
+        "branch": "add_0",
+        "recursive": false
+      },
+      "parent": "a_2"
+    },
+    {
+      "v": "a_2:const(1)_1",
+      "value": {
+        "id": "math/const",
+        "version": "0.3.0",
+        "inputPorts": {},
+        "outputPorts": {
+          "output": "number"
+        },
+        "atomic": true,
+        "settings": {
+          "argumentOrdering": [
+            "output"
+          ]
+        },
+        "path": [
+          {
+            "meta": "a",
+            "branch": "a_2",
+            "branchPath": "a_2"
+          }
+        ],
+        "params": {
+          "value": 1
+        },
+        "parent": "a_2",
+        "branchPath": "a_2:const(1)_1",
+        "branch": "const(1)_1",
+        "recursive": false
+      },
+      "parent": "a_2"
+    },
+    {
+      "v": "const(2)_3",
+      "value": {
+        "id": "math/const",
+        "version": "0.3.0",
+        "inputPorts": {},
+        "outputPorts": {
+          "output": "number"
+        },
+        "atomic": true,
+        "settings": {
+          "argumentOrdering": [
+            "output"
+          ]
+        },
+        "path": [],
+        "params": {
+          "value": 2
+        },
+        "branchPath": "const(2)_3",
+        "branch": "const(2)_3",
+        "name": "const(2)_3",
+        "recursive": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "v": "const(2)_3",
+      "w": "a_2",
+      "value": {
+        "outPort": "output",
+        "inPort": "b"
+      }
+    },
+    {
+      "v": "a_2:const(1)_1",
+      "w": "a_2:add_0",
+      "name": "a_2:const(1)_1:output→a_2:add_0:s1",
+      "value": {
+        "outPort": "output",
+        "inPort": "s1"
+      }
+    },
+    {
+      "v": "a_2",
+      "w": "a_2:add_0",
+      "name": "a_2:b→a_2:add_0:s2",
+      "value": {
+        "outPort": "b",
+        "inPort": "s2"
+      }
+    },
+    {
+      "v": "a_2:add_0",
+      "w": "a_2",
+      "name": "a_2:add_0:sum→a_2:value",
+      "value": {
+        "outPort": "sum",
+        "inPort": "value"
+      }
+    }
+  ]
+}
