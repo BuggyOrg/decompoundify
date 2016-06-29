@@ -1,9 +1,9 @@
 
 import * as rewrite from '../lib/const-rewrite.bundle.js'
-import {utils} from '@buggyorg/graphtools'
+import {graph as graphAPI} from '@buggyorg/graphtools'
 
 function applyGenericRules (graph) {
-  var newGraph = utils.clone(graph)
+  var newGraph = graphAPI.clone(graph)
   var applied = rewrite.rewriteRules[29](newGraph)
   return {graph: newGraph, applied}
 }
