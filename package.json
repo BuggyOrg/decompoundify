@@ -1,6 +1,6 @@
 {
   "name": "@buggyorg/decompoundify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Removes all unnecessary compounds (all but recursions and lambda functions) from a buggy graph.",
   "main": "./lib/api.js",
   "scripts": {
